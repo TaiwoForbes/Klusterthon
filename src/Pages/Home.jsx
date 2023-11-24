@@ -21,7 +21,7 @@ const Home = () => {
   }, []); // Empty dependency array ensures the effect runs only once, like componentDidMount
 
   return (
-    <div className="">
+    <div className="h-screen">
       <img src={images[count]} alt="" className="w-[500px] h-[400px] object-cover" />
 
       <div className="flex justify-center items-center flex-col absolute top-[65%] left-0 right-0">
