@@ -8,6 +8,33 @@ import { Link } from "react-router-dom";
 const SignUp = () => {
   const [count, setCount] = useState(0);
   const [otp, setOpt] = useState(new Array(5).fill(""));
+  const [formData,setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    birthDay: '',
+    email: '',
+    number: '',
+    box: false,
+
+  })
+  const {firstName,lastName,birthDay,email,number,box} = formData
+
+  console.log(formData);
+
+  const handleFormData = (e)=>{
+    let boolean = null;
+    if (e.target.value === "true") {
+      boolean = true;
+    }
+    if (e.target.value === "false") {
+      boolean = false;
+    }
+    
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.id]: boolean ?? e.target.value,
+    }));
+  }
   const handleChange = (element, index) => {
     if (isNaN(element.value)) return false;
     setOpt([...otp.map((d, idx) => (idx === index ? element.value : d))]);
@@ -38,16 +65,25 @@ const SignUp = () => {
               <input
                 type="text"
                 placeholder="First name"
+                id="firstName"
+                value={firstName}
+                onChange={handleFormData}
                 className="border-2 bg-gray-200 w-[100%] rounded-lg px-[0.5rem] py-[0.5rem]  outline-[#850586]"
               />
               <input
                 type="text"
                 placeholder="Last name"
+                id="lastName"
+                value={lastName}
+                onChange={handleFormData}
                 className="border-2 bg-gray-200 w-[100%] rounded-lg px-[0.5rem] py-[0.5rem]  outline-[#850586]"
               />
               <input
                 type="text"
                 placeholder="Birthday(mm/dd/yy)"
+                id="birthDay"
+                value={birthDay}
+                onChange={handleFormData}
                 className="border-2 bg-gray-200 w-[100%] rounded-lg px-[0.5rem] py-[0.5rem]  outline-[#850586]"
               />
               <button
@@ -78,12 +114,18 @@ const SignUp = () => {
               <input
                 type="email"
                 placeholder="Email address"
+                id="email"
+                value={email}
+                onChange={handleFormData}
                 className="border-2 bg-gray-200 w-[100%] rounded-lg px-[0.5rem] py-[0.5rem]  outline-[#850586]"
               />
               <div className="flex gap-2 justify-center items-center ">
                 <input
                   type="checkbox"
                   placeholder="Last name"
+                  id="box"
+                value={true}
+                onChange={handleFormData}
                   className="border-2 w-[20px] h-[20px] bg-gray-200  rounded-lg px-[0.5rem] py-[0.5rem]  outline-[#850586]"
                 />
                 <p className="mt-[1.4rem] text-[#797979]">
@@ -116,8 +158,11 @@ const SignUp = () => {
             </p>
             <div className="flex flex-col gap-2">
               <input
-                type="number"
+                type="text"
                 placeholder="(+234) 806-123-4567"
+                id="number"
+                value={number}
+                onChange={handleFormData}
                 className="border-2 bg-gray-200 w-[100%] rounded-lg px-[0.5rem] py-[0.5rem]  outline-[#850586]"
               />
 
@@ -158,17 +203,16 @@ const SignUp = () => {
                       value={data}
                       onChange={(e) => handleChange(e.target, index)}
                       onFocus={(e) => e.target.select()}
-                      className="border-2 text-black text-center bg-gray-200 w-[100%] rounded-lg px-[0.5rem] py-[0.5rem]  outline-[#850586]"
+                      className="border-2 text-black text-center bg-gray-200 w-[100%] rounded-lg px-[1rem] py-[1rem]  outline-[#850586]"
                     />
+                    
                   );
                 })}
               </div>
-              <button
-                onClick={Increment}
-                className="bg-[#850586] w-full  mt-[5rem]   left-4 font-bold right-0 rounded-lg py-[1rem] text-white  "
-              >
-                Continue
-              </button>
+                <p className="font-[400] my-4 text-[14px] text-center text-[#797979]">
+                Didn’t receive a code? <span className="text-[#850586] font-bold">Send again</span>
+            </p>
+              
             </div>
           </div>
         )}

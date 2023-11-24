@@ -54,7 +54,7 @@ const Home = () => {
      </Link>
         <p>
           Already have an account?{" "}
-          <span className="text-[[#850586]]"> Sign In</span>
+          <span className="text-[#850586] font-bold"> Sign In</span>
         </p>
       </div>
     </div>
