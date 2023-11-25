@@ -14,7 +14,7 @@ const Header = () => {
             <img src={home} alt="" className='w-[30px] h-[30px]' />
             <h1>Home</h1>
         </NavLink>
-        <NavLink className='flex flex-col justify-center items-center'>
+        <NavLink to='/rates' className='flex flex-col justify-center items-center'>
             <img src={rates} alt="" />
             <p>Rate</p>
         </NavLink>

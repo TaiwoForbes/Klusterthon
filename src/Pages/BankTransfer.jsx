@@ -7,7 +7,7 @@ const BankTransfer = () => {
   return (
     <div className="py-[2rem] px-[1rem]">
       <div className="flex items-center gap-[6rem]  mb-[3rem]">
-        <Link to="..">
+        <Link to="/wallet/fundWallet">
           <img src={back} alt="" className="" />
         </Link>
         <h1 className="text-center font-[500] text-[20px]">Bank Transfer</h1>

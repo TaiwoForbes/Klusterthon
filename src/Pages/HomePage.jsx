@@ -3,6 +3,7 @@ import avatar from "../assets/avatar.png";
 import bell from "../assets/bell.png";
 import frame from "../assets/frame.png";
 import Transaction from "./Transcation";
+import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <div>
@@ -22,16 +23,20 @@ const HomePage = () => {
           <p className="font-[500] text-[25px]">#0.00</p>
         </div>
         <div className="flex gap-[10px] justify-center items-center ">
-          <button className="bg-white border-[1px] border-[#850586] py-[15px] px-[48px] rounded-[15px] text-[12px]">
-            {" "}
-            Send Money
-          </button>
-          <button className="bg-[#850586] py-[15px] px-[48px] rounded-[15px] text-white text-[12px]">
-            Fund Wallect
-          </button>
+          <Link to='sendMoney'>
+            <button className="bg-white border-[1px] border-[#850586] py-[15px] px-[48px] rounded-[15px] text-[12px]">
+              {" "}
+              Send Money
+            </button>
+          </Link>
+          <Link to='fundWallet'>
+            <button className="bg-[#850586] py-[15px] px-[48px] rounded-[15px] text-white text-[12px]">
+              Fund Wallect
+            </button>
+          </Link>
         </div>
       </div>
-      <Transaction/>
+      <Transaction />
     </div>
   );
 };
