@@ -29,7 +29,7 @@ const Header = () => {
         <img src={wallet} alt=""className="w-[30px] h-[30px]" />
         <p className="text-[10px]">Wallet</p>
       </NavLink>
-      <NavLink className="flex flex-col justify-center items-center">
+      <NavLink to='/profile' className="flex flex-col justify-center items-center">
         <img src={avatar} alt="" className="w-[30px] h-[30px]" />
         <p className="text-[10px]">Profile</p>
       </NavLink>

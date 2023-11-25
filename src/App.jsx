@@ -10,6 +10,7 @@ import BankTransfer from "./Pages/BankTransfer";
 import SendMoney from "./Pages/SendMoney";
 import SendToUser from "./Pages/SendToUser";
 import Rates from "./Pages/Rates";
+import Profile from "./Pages/Profile";
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
             </Route>
             <Route path="rates" element={<LayOut />}>
               <Route index element={<Rates />} />
+              
+            </Route>
+            <Route path="profile" element={<LayOut />}>
+              <Route index element={<Profile />} />
               
             </Route>
 
